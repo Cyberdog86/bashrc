@@ -1,0 +1,48 @@
+#####################################################
+##
+##  Author: peter1
+##  File: ~/.bashrc_contents/backuprc
+##
+#####################################################
+
+
+
+
+##
+#	Backup Eigenbau
+##
+
+# Rsync und Borg und Snapshot
+
+function backup()
+{
+	echo "Rsync Backup machen ?"
+	read -p "Bestätigen ? (y/n) " yn
+	case $yn in
+		[Yy]*) sudo rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /* /run/media/peter1/Backup/rsync/;
+		B_borg;;
+		[Nn]*) echo "Rsync Backup wird nicht angelegt"; B_borg;
+		esac
+}
+
+function B_borg()
+{
+ 	echo "Borg Backup machen ?"
+    read -p "Bestätigen ? (y/n) " yn
+    case $yn in
+
+        [Yy]*) 
+		echo "User Eingabe erforderlich"
+		read -p "Name z.b.: 02_Mai_16: " aa
+		echo "Eingegebene Variable:" $aa
+		# borg init /run/media/peter1/Backup/borg/ ist vorher erforderlich
+		borg create --stats --progress --compression lz4 /run/media/peter1/Backup/borg/repo::$aa /home/*;
+     	B_snapshot;;
+        [Nn]*) echo "Exit"; B_snapshot;;
+        esac
+}
+
+#function B_snapshot()
+#{
+#
+#}

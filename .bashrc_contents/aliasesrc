@@ -1,0 +1,72 @@
+#####################################################
+##
+##	Author: peter1
+##	File: ~/.bashrc_contents/aliasesrc
+##
+#####################################################
+
+
+
+
+##
+#	System aktuell halten
+##
+
+# Systemaktualisierung pacman
+alias wrapper='sudo pacman -Syyu'
+
+
+
+
+##
+#	Programme mit Variablen	
+##
+
+# Starte Browser mit Bookmark
+alias w3m='w3m -B'
+
+# Starte lftp
+alias lftp='lftp cyberdog86'
+
+# Packete entpacken
+alias entpack='extract'
+
+
+
+
+##
+#	Kurzbefehle
+##
+
+# Abfrage ob Datei wirklich kopiert werden soll
+alias cp='cp -i'
+
+# Abfrage ob Datei wirklich verschoben werden soll
+alias mv='mv -i'
+
+# Kurzbefehl für history
+alias h='history'
+
+# Ordnerstrucktur zurückgehen
+alias ..='cd ..'
+
+# Verzeichnisfarbe
+alias ls='ls --color=auto'
+
+# Gesamte Bashrc neu einlesen
+alias reload='source ~/.bashrc'
+
+
+
+
+##
+#	Git Beehle
+##
+
+# Grundbefehle
+alias gi='git init '
+alias ga='git add '
+alias gc='git commit -m "$2"'
+alias gs='git status '
+alias gu='git push origin master'
+

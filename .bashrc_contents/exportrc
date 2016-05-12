@@ -1,0 +1,23 @@
+#####################################################
+##
+##  Author: peter1
+##  File: ~/.bashrc_contents/exportrc
+##
+#####################################################
+
+
+
+ 
+##
+#   Export Angaben
+##
+ 
+# Editor
+export VISITOR=vim
+export EDITOR=vim
+
+# History
+export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
+
+# Browser
+export BROWSER=w3m
